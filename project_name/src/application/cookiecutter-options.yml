@@ -1,0 +1,11 @@
+default_context:
+    project_name: "project_name"
+    app_name: "myapi"
+    author_name: "Lojelis"
+    description: "A short description of the project."
+    python_version: "3.8"
+    tox_python_env: "py38"
+    wsgi_server: "none"
+    python_interpreter: "python3"
+
+
