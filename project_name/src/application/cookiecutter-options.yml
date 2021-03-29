@@ -1,5 +1,5 @@
 default_context:
-    project_name: "athelis"
+    project_name: "project_name"
     app_name: "myapi"
     author_name: "Lojelis"
     description: "A short description of the project."

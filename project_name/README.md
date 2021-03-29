@@ -1,4 +1,4 @@
-athelis
+project_name
 ==============================
 
 A short description of the project.

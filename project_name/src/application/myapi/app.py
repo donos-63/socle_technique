@@ -62,6 +62,7 @@ def register_blueprints(app):
 def configure_logs(app):
     # soft logging
     try:
+
         logging.basicConfig(filename="error.log", level=logging.DEBUG)
         logger = logging.getLogger()
         logger.addHandler(logging.StreamHandler())
