@@ -1,8 +1,6 @@
 from flask import Blueprint, current_app, jsonify
 from flask_restful import Api
 from myapi.extensions import apispec
-from flask_jwt_extended import jwt_required
-
 
 
 blueprint = Blueprint("example", __name__, url_prefix="/example")
@@ -37,9 +35,6 @@ def hello_world():
     return jsonify(ret), 200
 
 
-
 @blueprint.before_app_first_request
 def register_views():
     apispec.spec.path(view=hello_world, app=current_app)
-
-

@@ -7,7 +7,8 @@ from myapi.extensions import apispec
 from myapi.extensions import db
 from myapi.extensions import jwt
 from myapi.extensions import migrate
-from logging import basicConfig, DEBUG, getLogger, StreamHandler
+import logging
+
 
 def create_app(testing=False):
     """Application factory, used to create application"""
@@ -57,11 +58,14 @@ def register_blueprints(app):
     app.register_blueprint(users.views.blueprint)
     app.register_blueprint(example.views.blueprint)
 
+
 def configure_logs(app):
     # soft logging
     try:
-        basicConfig(filename='error.log', level=DEBUG)
-        logger = getLogger()
-        logger.addHandler(StreamHandler())
-    except:
+        logging.basicConfig(filename="error.log", level=logging.DEBUG)
+        logger = logging.getLogger()
+        logger.addHandler(logging.StreamHandler())
+
+    except Exception as ex:
+        logging.error("Error while initializing logger: " + ex.msg)
         pass
